@@ -27,9 +27,12 @@
               "src/assets"
             ],
             "styles": [
+              "ttccPorfolio/ttccProfolio/node_modules/bootstrap/dist/css/bootstrap.css"
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "ttccPorfolio/ttccProfolio/node_modules/bootstrap/dist/js/bootstrap.js"
+            ]
           },
           "configurations": {
             "production": {
