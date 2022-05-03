@@ -1,0 +1,24 @@
+@media (max-width: 575px){
+    #descripcionPersonal {
+        padding: 20px;
+        position: relative;
+        bottom: 180px;
+
+    }
+} 
+
+@media (min-width: 576px){
+    #descripcionPersonal {
+        padding: 20px
+    }
+
+}
+
+h4 { 
+    color: rgb(250, 0, 146);
+}
+
+p {
+    color: white;
+}
+
