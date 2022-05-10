@@ -19,6 +19,9 @@ import { ItemComponent } from './components/item/item.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { PorcentajeComponent } from './components/porcentaje/porcentaje.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { ProyectoComponent } from './components/proyecto/proyecto.component';
+import { ProyectosComponent } from './components/proyectos/proyectos.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -39,6 +42,9 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     ItemComponent,
     SkillsComponent,
     PorcentajeComponent,
+    ProyectoComponent,
+    ProyectosComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
