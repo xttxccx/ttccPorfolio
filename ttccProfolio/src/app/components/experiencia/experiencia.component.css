@@ -1,0 +1,5 @@
+div{
+    padding: 2%;
+    background-image: radial-gradient(ellipse at 162% 52%, #b857f8 12%, rgba(255,255,255,0) 72%), radial-gradient(ellipse at 126% 151%, #61b0c6 54%, rgba(255,255,255,0) 97%), linear-gradient(174deg, #3704b8 31%, rgba(255,255,255,0) 43%), linear-gradient(184deg, #ca16a0 34%, rgba(255,255,255,0) 86%), linear-gradient(252deg, rgba(255,255,255,0) 0%, #8102ff 54%);
+}
+
