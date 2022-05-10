@@ -14,7 +14,7 @@
     }
 } 
 
-@media (min-width: 576px){
+@media (min-width: 576px) and (max-width: 767px){
     #fotoPerfil {
         padding: 30px;
         height: 40%;
@@ -25,7 +25,41 @@
     #nombreTitulos {
         text-align: center;
         position: relative;
-        bottom: 45px;
+        bottom: 55px;
+        left: 30px;
+    }
+
+}
+
+@media (min-width: 768px) and (max-width:1200px) {
+    #fotoPerfil {
+        padding: 5px;
+        width: 100%;
+        position: relative;
+        bottom: 70px;
+        left: 30px;
+    }
+    #nombreTitulos {
+        text-align: center;
+        position: relative;
+        bottom: 110px;
+        left: 30px;
+    }
+
+}
+
+@media (min-width: 1200px) {
+    #fotoPerfil {
+        padding: 30px;
+        width: 100%;
+        position: relative;
+        bottom: 110px;
+        left: 30px;
+    }
+    #nombreTitulos {
+        text-align: center;
+        position: relative;
+        bottom: 185px;
         left: 30px;
     }
 
