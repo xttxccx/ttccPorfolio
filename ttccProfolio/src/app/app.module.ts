@@ -18,7 +18,7 @@ import { TrabajoComponent } from './components/trabajo/trabajo.component';
 import { ItemComponent } from './components/item/item.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { PorcentajeComponent } from './components/porcentaje/porcentaje.component';
-
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 
 @NgModule({
@@ -42,7 +42,8 @@ import { PorcentajeComponent } from './components/porcentaje/porcentaje.componen
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgCircleProgressModule.forRoot({}),
   ],
   providers: [],
   bootstrap: [AppComponent]
