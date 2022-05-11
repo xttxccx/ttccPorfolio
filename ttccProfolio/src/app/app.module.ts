@@ -22,6 +22,8 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 import { ProyectoComponent } from './components/proyecto/proyecto.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { BotonLoginComponent } from './components/boton-login/boton-login.component';
+import { LogosComponent } from './components/logos/logos.component';
 
 
 @NgModule({
@@ -45,6 +47,8 @@ import { FooterComponent } from './components/footer/footer.component';
     ProyectoComponent,
     ProyectosComponent,
     FooterComponent,
+    BotonLoginComponent,
+    LogosComponent,
   ],
   imports: [
     BrowserModule,

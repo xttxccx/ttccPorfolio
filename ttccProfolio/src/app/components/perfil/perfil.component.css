@@ -1,8 +1,12 @@
+.container {
+    display: block;
+    align-items: center;
+}
+
 @media (max-width: 575px){
     #fotoPerfil {
     padding: 10px;
     width: 50%;
-    display: block;
     margin: auto;
     position: relative;
     bottom: 125px;
@@ -25,13 +29,13 @@
     #nombreTitulos {
         text-align: center;
         position: relative;
-        bottom: 55px;
+        bottom: 185px;
         left: 30px;
     }
 
 }
 
-@media (min-width: 768px) and (max-width:1200px) {
+@media (min-width: 768px) /*and (max-width:1200px) {
     #fotoPerfil {
         padding: 30px;
         width: 100%;
@@ -48,7 +52,7 @@
 
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1200px) */{
     #fotoPerfil {
         padding: 30px;
         width: 100%;
@@ -75,3 +79,4 @@ p {
     color: white;
     padding: 5px;
 }
+
