@@ -1,15 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { perfil } from 'src/app/model/perfil.model';
+import { PerfilService } from 'src/app/service/perfil.service';
 
 @Component({
   selector: 'app-perfil',
   templateUrl: './perfil.component.html',
   styleUrls: ['./perfil.component.css']
 })
-export class PerfilComponent implements OnInit {
 
-  constructor() { }
+export class PerfilComponent implements OnInit {
+  perfil: perfil = new perfil("","","");
+
+  constructor(public perfilService: PerfilService) { }
 
   ngOnInit(): void {
+    this.perfilService.getPerfil().subscribe(data => {this.perfil = data})
   }
 
 }

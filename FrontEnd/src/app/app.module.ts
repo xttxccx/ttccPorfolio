@@ -24,6 +24,7 @@ import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { BotonLoginComponent } from './components/boton-login/boton-login.component';
 import { LogosComponent } from './components/logos/logos.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -50,10 +51,12 @@ import { LogosComponent } from './components/logos/logos.component';
     BotonLoginComponent,
     LogosComponent,
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgCircleProgressModule.forRoot({}),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
