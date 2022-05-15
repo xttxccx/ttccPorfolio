@@ -24,6 +24,11 @@ public class PerfilController {
         return iperfilService.getPerfil();
     }
     
+    @GetMapping("/perfil/traer/{id}")
+    public Perfil findPerfil(@PathVariable Long id){
+        return iperfilService.findPerfil(id);
+    }
+    
     @PostMapping("/perfil/crear")
     public String createPerfil(@RequestBody Perfil perfil){
         iperfilService.savePerfil(perfil);
