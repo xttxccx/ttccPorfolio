@@ -1,0 +1,50 @@
+<div class="modal-dialog text-center">
+  <div class="col-sm-8">
+    <div class="modal-content">
+
+      <h2>Iniciar Sesión </h2>
+      
+    <form [formGroup]="form" class="m-5" (ngSubmit)="onEnviar($event)">
+    <div class="mb-3">
+      <label for="exampleInputEmail1">Email</label>
+      <input type="email" formControlName="email" 
+      [ngClass]="{'is-invalid': Email?.errors && Email?.touched, 'is-valid': !Email?.errors && Email?.touched}"
+      class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresar email">
+      <div *ngIf="Email?.errors && Email?.touched">
+        <p *ngIf="Email?.hasError('requiered')" class="text-danger">
+          Completar email por favor.
+        </p>
+        <p *ngIf="Email?.hasError('email')" class="text-danger">
+          El formato ingresado es inválido.
+        </p>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1">Contraseña</label>
+      <input type="password" formControlName="password" 
+      [ngClass]="{'is-invalid': Password?.errors && Password?.touched, 'is-valid': !Password?.errors && Password?.touched}"
+      class="form-control" id="exampleInputPassword1" placeholder="Ingresar contraseña">
+      <div *ngIf="Password?.errors && Password?.touched">
+        <p *ngIf="Password?.hasError('requiered')" class="text-danger">
+          Completar contraseña por favor.
+        </p>
+        <p *ngIf="Password?.errors?.['minlength']" class="text-danger">
+          La contraseña debe tener mínimo 8 caracteres.
+        </p>
+      </div>
+    </div>
+    <!-- <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div> -->
+    <button type="submit" class="btn btn-primary">Enviar</button>
+  </form>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
