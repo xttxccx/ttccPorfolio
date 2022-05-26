@@ -25,11 +25,10 @@ import { FooterComponent } from './components/footer/footer.component';
 import { BotonLoginComponent } from './components/boton-login/boton-login.component';
 import { LogosComponent } from './components/logos/logos.component';
 import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { LoginComponent } from './components/login/login.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PortfolioService } from './service/portfolio.service';
-import { InterceptorService } from './service/interceptor.service';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -55,8 +54,8 @@ import { InterceptorService } from './service/interceptor.service';
     FooterComponent,
     BotonLoginComponent,
     LogosComponent,
-    LoginComponent,
     PortfolioComponent,
+    LoginComponent,
   ],
   
   imports: [
@@ -66,10 +65,8 @@ import { InterceptorService } from './service/interceptor.service';
     HttpClientModule,
     ReactiveFormsModule,
   ],
-  providers: [
-    PortfolioService,
-    { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true}, 
-  ],
+  providers: [],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }
