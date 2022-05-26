@@ -29,10 +29,9 @@ public class TrabajoController {
         return traSer.verTrabajos();    
     }
     
-    @DeleteMapping ("/delete/tra{id}")
-    public String borrarTrabajo (Long id){
+    @DeleteMapping ("/delete/{id}")
+    public void borrarTrabajo (Long id){
         traSer.borrarTrabajo(id);
-        return "Trabajo eliminado exitosamente.";
     }
     
     

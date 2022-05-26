@@ -1,3 +1,4 @@
+
 package com.porfolio.BackEnd.Entity;
 
 import javax.persistence.Entity;
@@ -11,39 +12,39 @@ import lombok.Setter;
 
 @Entity
 @Getter @Setter
-public class Trabajo {
+public class Formacion {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long idTra;
+    private Long idForm;
     
     @NotNull @Size(min=1, max=225, message="error de longitud")
-    private String tituloTra;
+    private String tituloForm;
     
     @NotNull 
-    private int fechaITra;
+    private int fechaIForm;
     
-    private int fechaFTra;
-   
+    private int fechaFForm;
+    
     @NotNull @Size(min=1, max=500, message="error de longitud")
-    private String descTra;
-   
-    @Size(min=1, max=300, message="error de longitud")
-    private String imgTra;
-
-    public Trabajo() {
-    }
-
-    public Trabajo(Long idTra, String tituloTra, int fechaITra, int fechaFTra, String descTra, String imgTra) {
-        this.idTra = idTra;
-        this.tituloTra = tituloTra;
-        this.fechaITra = fechaITra;
-        this.fechaFTra = fechaFTra;
-        this.descTra = descTra;
-        this.imgTra = imgTra;
-    }
-
-  
+    private String descForm;
     
+    @Size(min=1, max=300, message="error de longitud")
+    private String imgForm;
+
+    
+    public Formacion() {
+    }
+
+    public Formacion(Long idForm, String tituloForm, int fechaIForm, int fechaFForm, String descForm, String imgForm) {
+        this.idForm = idForm;
+        this.tituloForm = tituloForm;
+        this.fechaIForm = fechaIForm;
+        this.fechaFForm = fechaFForm;
+        this.descForm = descForm;
+        this.imgForm = imgForm;
+    }
+    
+      
     
 }

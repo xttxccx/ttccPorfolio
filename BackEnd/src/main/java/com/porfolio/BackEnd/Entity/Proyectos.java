@@ -1,3 +1,4 @@
+
 package com.porfolio.BackEnd.Entity;
 
 import javax.persistence.Entity;
@@ -11,39 +12,38 @@ import lombok.Setter;
 
 @Entity
 @Getter @Setter
-public class Trabajo {
+public class Proyectos {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long idTra;
+    private Long idProy;
     
     @NotNull @Size(min=1, max=225, message="error de longitud")
-    private String tituloTra;
+    private String tituloProy;
     
     @NotNull 
-    private int fechaITra;
-    
-    private int fechaFTra;
+    private int fechaProy;
    
     @NotNull @Size(min=1, max=500, message="error de longitud")
-    private String descTra;
+    private String descProy;
    
+    @NotNull @Size(min=1, max=300, message="error de longitud")
+    private String imgProy;
+    
     @Size(min=1, max=300, message="error de longitud")
-    private String imgTra;
+    private String linkProy;
 
-    public Trabajo() {
+    public Proyectos() {
     }
 
-    public Trabajo(Long idTra, String tituloTra, int fechaITra, int fechaFTra, String descTra, String imgTra) {
-        this.idTra = idTra;
-        this.tituloTra = tituloTra;
-        this.fechaITra = fechaITra;
-        this.fechaFTra = fechaFTra;
-        this.descTra = descTra;
-        this.imgTra = imgTra;
+    public Proyectos(Long idProy, String tituloProy, int fechaProy, String descProy, String imgProy, String linkProy) {
+        this.idProy = idProy;
+        this.tituloProy = tituloProy;
+        this.fechaProy = fechaProy;
+        this.descProy = descProy;
+        this.imgProy = imgProy;
+        this.linkProy = linkProy;
     }
-
-  
     
     
 }

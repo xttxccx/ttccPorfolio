@@ -4,41 +4,34 @@ import com.porfolio.BackEnd.Entity.Docencia;
 import com.porfolio.BackEnd.Interface.IDocenciaService;
 import com.porfolio.BackEnd.Repository.IDocenciaRepository;
 import java.util.List;
-import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-@Transactional
 public class ImpDocenciaService implements IDocenciaService {
     @Autowired IDocenciaRepository idocenciaRepository;
-    
+
     @Override
-    public List<Docencia> verDocencia() {
+    public List<Docencia> getDocencia() {
         List<Docencia> docencia = idocenciaRepository.findAll();
         return docencia;
     }
 
     @Override
-    public void nuevaDocencia(Docencia doc) {
-        idocenciaRepository.save(doc);
+    public void saveDocencia(Docencia docencia) {
+        idocenciaRepository.save(docencia);
     }
 
     @Override
-    public void borrarDocencia(Long id) {
-        idocenciaRepository.deleteById(id);        
+    public void deleteDocencia(Long id) {
+        idocenciaRepository.deleteById(id);
     }
 
     @Override
-    public Docencia buscarDocencia(Long id) {
+    public Docencia findDocencia(Long id) {
         Docencia docencia = idocenciaRepository.findById(id).orElse(null);
         return docencia;
     }
-
-    @Override
-    public Docencia editarDocencia(Docencia doc) {
-        return idocenciaRepository.save(doc);
-    }
-
+    
     
 }
