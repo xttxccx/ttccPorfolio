@@ -9,23 +9,29 @@
         <p>Tatiana Cuoco</p>
 </div> -->
 
- 
-<div class="container">
-    <div id="fotoPerfil">
-        <img src={{perfil.imgPerfil}} class="img-fluid"
-        width="100%" alt="Responsive image">
+<div class="row" id="banner">
+    <img src={{perfil.banner}} id="banner" class="img-fluid" alt="Responsive image">
+</div> 
+<div class="row">
+    <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
+        <div id="fotoPerfil">
+            <img src={{perfil.imgPerfil}} class="img-fluid"
+            width="100%" alt="Responsive image">
+        </div>
+        <div id="nombreTitulos">
+            <h2>{{perfil.apodo}}</h2>
+            <p>{{perfil.nombre}}</p>
+        </div>
     </div>
-    <div id="nombreTitulos">
-        <h2>{{perfil.apodo}}</h2>
-        <p>{{perfil.nombre}}</p>
+    <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10">
+        <div id="descripcionPersonal">
+            <h4>{{perfil.titulo}}</h4>
+            <p>{{perfil.descripcion}}</p>
+        </div>
     </div>
 </div>
 
-<!-- 
-<div ngIf="Perfil">
-    <h1>{{perfil.nombre}}</h1>
 
-</div> -->
 
 
     
