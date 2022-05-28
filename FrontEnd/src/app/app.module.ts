@@ -24,11 +24,12 @@ import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { BotonLoginComponent } from './components/boton-login/boton-login.component';
 import { LogosComponent } from './components/logos/logos.component';
-import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { PortfolioComponent } from './components/portfolio/portfolio.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { PortfolioService } from './service/portfolio.service';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
+import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PortfolioService } from './service/portfolio.service';
+
 
 
 @NgModule({
@@ -64,6 +65,7 @@ import { LoginComponent } from './components/login/login.component';
     NgCircleProgressModule.forRoot({}),
     HttpClientModule,
     ReactiveFormsModule,
+    FormsModule, 
   ],
   providers: [],
   
