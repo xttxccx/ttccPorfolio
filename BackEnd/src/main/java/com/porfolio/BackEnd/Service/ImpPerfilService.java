@@ -4,11 +4,12 @@ import com.porfolio.BackEnd.Entity.Perfil;
 import com.porfolio.BackEnd.Interface.IPerfilService;
 import com.porfolio.BackEnd.Repository.IPerfilRepository;
 import java.util.List;
+import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-/*@Transactional*/
+@Transactional
 public class ImpPerfilService implements IPerfilService {
     @Autowired IPerfilRepository iperfilRepository;
     

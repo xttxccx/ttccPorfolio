@@ -1,5 +1,6 @@
 package com.porfolio.BackEnd.Entity;
 
+import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,7 +14,7 @@ import javax.validation.constraints.Size;
 
 
 @Entity
-public class Perfil {
+public class Perfil implements Serializable {
     
     @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)

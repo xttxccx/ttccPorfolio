@@ -24,6 +24,7 @@ public class Formacion {
     @NotNull 
     private int fechaIForm;
     
+    @NotNull
     private int fechaFForm;
     
     @NotNull @Size(min=1, max=500, message="error de longitud")
