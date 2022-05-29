@@ -1,16 +1,17 @@
 export class docencia {
-    id? : number;
-    anio: String;
-    empleo: String;
-    descripcion: String;
-    img: String;
+    idDoc? : number;
+    tituloDoc: String;
+    fechaIDoc: number;
+    fechaFDoc: number;
+    descDoc: String;
+    imgDoc: String;
 
-    constructor(anio: String, empleo: String, descripcion: String, img: String) {
-        this.anio = anio;
-        this.empleo = empleo;
-        this.descripcion = descripcion;
-        this.img = img;
-
+    constructor(tituloDoc: String, fechaIDoc: number, fechaFDoc: number, descDoc: String, imgDoc: String) {
+        this.tituloDoc = tituloDoc;
+        this.fechaIDoc = fechaIDoc;
+        this.fechaFDoc = fechaFDoc;
+        this.descDoc = descDoc;
+        this.imgDoc = imgDoc;
     }
 
 }

@@ -18,7 +18,7 @@ export class PerfilService {
   }
 
   public editarPerfil(perfil: perfil): Observable<perfil>{
-    return this.http.put<perfil>(`${this.apiServerUrl}/editar`, perfil);
+    return this.http.put<perfil>(`${this.apiServerUrl}/perfil/editar`, perfil);
 
   }
 }

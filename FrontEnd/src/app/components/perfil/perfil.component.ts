@@ -1,4 +1,3 @@
-import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { perfil } from 'src/app/model/perfil.model';
 import { PerfilService } from 'src/app/service/perfil.service';

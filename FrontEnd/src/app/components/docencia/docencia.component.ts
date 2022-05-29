@@ -7,8 +7,9 @@ import { DocenciaService } from 'src/app/service/docencia.service';
   templateUrl: './docencia.component.html',
   styleUrls: ['./docencia.component.css']
 })
+
 export class DocenciaComponent implements OnInit {
-  docencia: docencia = new docencia("","","","");
+  docencia: docencia = new docencia("", 0, 0,"","");
 
   constructor(public docenciaService: DocenciaService) { }
 
