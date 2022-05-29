@@ -1,6 +1,11 @@
-#imgXmple {
-    padding: 20%;
-    height: 120px;    
+.row {
+    background: rgb(161, 127, 224);  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, rgb(0, 174, 255), rgb(93, 38, 193), rgb(250, 0, 146));  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, rgb(0, 174, 255), rgb(93, 38, 193), rgb(250, 0, 146)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
-h2, h3 {display: inline-block; margin:2%}
+h1 { 
+    color: white;
+    padding: 50px;
+}
