@@ -1,1 +1,10 @@
-h2, h3 {display: inline-block; margin:2%}
+h2, h3, p {display: inline-block; margin:2%;color: white;}
+
+.row {
+    background-color: black;
+}
+
+h1 { 
+    color: white;
+    padding: 50px;
+}

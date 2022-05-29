@@ -9,4 +9,6 @@ public interface ITrabajoService {
     public void nuevoTrabajo (Trabajo tra);
     public void borrarTrabajo (Long id);
     public Trabajo buscarTrabajo (Long id);
+    public Trabajo editarTrabajo (Trabajo tra);
+    
 }

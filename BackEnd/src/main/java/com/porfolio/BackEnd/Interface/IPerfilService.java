@@ -6,16 +6,15 @@ import java.util.List;
 
 public interface IPerfilService {
     
-    //Traer lista de perfiles
-    public List<Perfil> getPerfil();
+    public List<Perfil> verPerfiles ();
+    public Perfil nuevoPerfil (Perfil perfil);
+    public void borrarPerfil (Long id);
+    public Perfil buscarPerfil (Long id);
+    public Perfil editarPerfil (Perfil perfil);
     
-    //Guardar obj perfil
-    public void savePerfil(Perfil perfil);
-    
-    //Eliminar obj perfil x ID
-    public void deletePerfil(Long id);
-    
-    //Buscar obj perfil x ID
-    public Perfil findPerfil(Long id);
+    /*public List<Perfil> getPerfil();    
+    public void savePerfil(Perfil perfil);    
+    public void deletePerfil(Long id);    
+    public Perfil findPerfil(Long id);*/
     
 }
