@@ -1,17 +1,35 @@
-<div class="row">
+<div class="row"> 
     <h1>Formación / Investigación / Residencias</h1>
-    <div class="col-lg-1"></div>
+</div>
+
+<div class="row" *ngFor="let formacion of formaciones">
+    <div class="col-lg-1">
+        <img src="{{formacion.imgForm}}" alt="" width="50">
+    </div>
+    <div class="col text center">
+        <a 
+            class="btn btn-info tooltips"
+            data-placement="top"
+            data-toogle="tooltip"
+            data-original-title="Edit"
+        ><i class="fa-solid fa-pencil"></i></a>
+        <a 
+            class="btn btn-info tooltips"
+            data-placement="top"
+            data-toogle="tooltip"
+            data-original-title="Delete"
+        ><i class="fa-solid fa-trash-can"></i></a>  
+    </div>
     <div class="col-lg-11">
-        <ul>
-            <li>
-                <h3>(years)</h3> <h2>X 2</h2> 
-                <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam culpa aliquid eaque quae. Minima corporis reiciendis velit laborum. Dolore laudantium iste nihil magni itaque nesciunt iure laborum saepe porro id?</p>
-            </li>
-            <li>
-                <h3>(years)</h3> <h2>X 3</h2> 
-                <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam culpa aliquid eaque quae. Minima corporis reiciendis velit laborum. Dolore laudantium iste nihil magni itaque nesciunt iure laborum saepe porro id?</p>
-            </li>
-        </ul>
+        <div class="col6">
+            <h2>{{formacion.tituloForm}}</h2>
+        </div>
+        <div class="col9">
+            <h4>{{formacion.fechaIForm}} - {{formacion.fechaFForm}}</h4>
+        </div>
+        <div class="col12">
+            <p>{{formacion.descForm}}</p>
+        </div>
     </div>
 </div>
 

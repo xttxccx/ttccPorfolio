@@ -1,5 +1,6 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { docencia } from 'src/app/model/docencia.model';
+import { Docencia } from 'src/app/model/docencia.model';
 import { DocenciaService } from 'src/app/service/docencia.service';
 
 @Component({
@@ -9,12 +10,24 @@ import { DocenciaService } from 'src/app/service/docencia.service';
 })
 
 export class DocenciaComponent implements OnInit {
-  docencia: docencia = new docencia("", 0, 0,"","");
+  
+  public docencias:Docencia[]=[];
 
   constructor(public docenciaService: DocenciaService) { }
 
   ngOnInit(): void {
-    this.docenciaService.getDocencia().subscribe(data => {this.docencia = data})
+    this.getDocencias();
+  }
+
+  public getDocencias(): void {
+    this.docenciaService.getDocencia().subscribe({
+      next:(Response: Docencia[]) => {
+        this.docencias=Response;
+      }, 
+      error:(error:HttpErrorResponse) => {
+        alert(error.message);
+      }
+    })
   }
 
 }

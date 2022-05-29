@@ -1,8 +1,42 @@
+
 <div class="row">
     <h1>Docencia / Talleres / Conferencias</h1>
-    <div class="col-lg-1"></div>
+</div>
+
+<div class="row" *ngFor="let docencia of docencias">
+    <div class="col-lg-1">
+        <img src="{{docencia.imgDoc}}" alt="" width="50">
+    </div>
+    <div class="col text center">
+        <a 
+            class="btn btn-info tooltips"
+            data-placement="top"
+            data-toogle="tooltip"
+            data-original-title="Edit"
+        ><i class="fa-solid fa-pencil"></i></a>
+        <a 
+            class="btn btn-info tooltips"
+            data-placement="top"
+            data-toogle="tooltip"
+            data-original-title="Delete"
+        ><i class="fa-solid fa-trash-can"></i></a>  
+    </div>
     <div class="col-lg-11">
-        <ul>
+        <div class="col6">
+            <h2>{{docencia.tituloDoc}}</h2>
+        </div>
+        <div class="col9">
+            <h4>{{docencia.fechaIDoc}} - {{docencia.fechaFDoc}}</h4>
+        </div>
+        <div class="col12">
+            <p>{{docencia.descDoc}}</p>
+        </div>
+    </div>
+</div>
+
+
+<!--
+    <ul>
             <li>
                 <h3>{{docencia.fechaIDoc}} - {{docencia.fechaFDoc}}</h3> <h2>{{docencia.tituloDoc}}</h2> 
                 <p>{{docencia.descDoc}}</p>
@@ -15,6 +49,5 @@
                 <h3>(years)</h3> <h2>X 3</h2> 
                 <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam culpa aliquid eaque quae. Minima corporis reiciendis velit laborum. Dolore laudantium iste nihil magni itaque nesciunt iure laborum saepe porro id?</p>
             </li>
-        </ul>
-    </div>
-</div>
+        </ul>S
+-->

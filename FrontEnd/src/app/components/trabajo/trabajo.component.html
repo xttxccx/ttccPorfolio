@@ -17,6 +17,41 @@
 <div class="row" style="text-align: right;">
     <h1>Trabajos realizados</h1>    
 </div>
+<div class="row" *ngFor="let trabajo of trabajos">
+    <div class="col-sm-3 mx-auto p-3">
+        <div class="card text-center bg-dark text-white m-10" style="width:80%;" >
+            <img class="card-img-top" src="{{trabajo.imgTra}}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{trabajo.tituloTra}}</h5>
+              <p class="card-text" text-justify="center">. {{trabajo.fechaITra}} . {{trabajo.fechaFTra}} . <br><br> {{trabajo.descTra}} </p>
+              <a 
+                class="btn btn-dark tooltips"
+                data-placement="top"
+                data-toogle="tooltip"
+                data-original-title="Edit"
+                ><i class="fa-solid fa-pencil"></i></a>
+              <a 
+                class="btn btn-dark tooltips"
+                data-placement="top"
+                data-toogle="tooltip"
+                data-original-title="Delete"
+                ><i class="fa-solid fa-trash-can"></i></a>  
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+<!--
+
+<div class="row" style="text-align: right;">
+    <h1>Trabajos realizados</h1>    
+</div>
 <div class="row" style="align-content: center;">
     <div class="col-sm-3 mx-auto p-3" text-align="center">
         <div class="card text-center bg-dark text-white m-10" style="width:80%;" >
@@ -56,4 +91,32 @@
         </div>
     
    
-</div>
+</div> 
+
+
+    <div class="col3">
+        <img src="{{trabajo.imgTra}}" alt="" width="50">        
+    </div>
+    <div class="col text center">
+        <a 
+            class="btn btn-info tooltips"
+            data-placement="top"
+            data-toogle="tooltip"
+            data-original-title="Edit"
+        ><i class="fa-solid fa-pencil"></i></a>
+        <a 
+            class="btn btn-dark tooltips"
+            data-placement="top"
+            data-toogle="tooltip"
+            data-original-title="Delete"
+        ><i class="fa-solid fa-trash-can"></i></a>  
+    </div>
+    <div class="col6">
+        <h2>{{trabajo.tituloTra}}</h2>
+    </div>
+    <div class="col9">
+        <h4>{{trabajo.fechaITra}} - {{trabajo.fechaFTra}}</h4>
+    </div>
+    <div class="col12">
+        <p>{{trabajo.descTra}}</p>
+    </div>-->
