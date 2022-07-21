@@ -1,7 +1,9 @@
-import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Formacion } from 'src/app/model/formacion.model';
-import { FormacionService } from 'src/app/service/formacion.service';
+import { Formacion } from 'src/app/model/formacion';
+import { SFormacionService } from 'src/app/service/s-formacion.service';
+import { TokenService } from 'src/app/service/token.service';
+
+declare var window: any;
 
 @Component({
   selector: 'app-formacion',
@@ -10,22 +12,71 @@ import { FormacionService } from 'src/app/service/formacion.service';
 })
 export class FormacionComponent implements OnInit {
 
-  public formaciones: Formacion[] = [];
+  forma: Formacion[] = [];
+  nombreF: string = '';
+  fechaIF : number = null;
+  fechaFF : number = null;
+  descripcionF : string = '';
+  imgF : string = null;
+  formModalNewF: any;
 
-  constructor(public formacionService: FormacionService) { }
+  constructor(
+    private sFormacion: SFormacionService, 
+    private tokenService: TokenService) { }
+
+  isLogged = false;
 
   ngOnInit(): void {
-    this.getFormaciones();
+    
+    this.cargarFormacion();
+
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }
+
+    this.formModalNewF = new window.bootstrap.Modal(
+      document.getElementById('newModalF')
+    );
   }
 
-  public getFormaciones(): void {
-    this.formacionService.getFormacion().subscribe({
-      next:(Response: Formacion[]) => {
-        this.formaciones=Response;
-      }, 
-      error:(error:HttpErrorResponse) => {
-        alert(error.message);
-      }
-    })
+  cargarFormacion(): void {
+    this.sFormacion.lista().subscribe(data => {this.forma = data;})
   }
+
+  openFormModalNewF() {
+    this.formModalNewF.show();
+  }
+
+  reloadCurrentPage() {
+    window.location.reload();
+  }
+
+  onCreate(): void {
+    const forma = new Formacion(this.nombreF, this.fechaIF, this.fechaFF, this.descripcionF, this.imgF);
+    this.sFormacion.save(forma).subscribe(
+      data => {
+        alert("Formación añadida");
+        this.formModalNewF.hide();
+      }, err => {
+        alert("Falló");
+        this.formModalNewF.hide();
+      })
+  }
+
+  delete(id?: number){
+    if(id != undefined){
+      this.sFormacion.delete(id).subscribe(
+        data => {
+          this.cargarFormacion();
+        }, err => {
+          alert("No se pudo borrar la formación");
+        }
+        )
+    }
+  }
+
+
+  
 }

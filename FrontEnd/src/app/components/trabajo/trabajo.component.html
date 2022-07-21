@@ -1,46 +1,117 @@
-<!-- <div class="row">
-    <h1>Experiencia laboral</h1>
-    <div class="row" id="item">
-        <div class="text-center col-lg-1">
-            <img src="../../../assets/imgXmple.jpg" id="imgXmple">
-        </div>
-        <div class="col-lg-10">
-            <ul>
-                    <h3>(years)</h3> <h2>Trabajo 1</h2> 
-                    <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam culpa aliquid eaque quae. Minima corporis reiciendis velit laborum. Dolore laudantium iste nihil magni itaque nesciunt iure laborum saepe porro id?</p>
-                
-            </ul>
-        </div>
-    </div>    
-</div> -->
-
-<div class="row" style="text-align: right;">
-    <h1>Trabajos realizados</h1>    
-</div>
-<div class="row" *ngFor="let trabajo of trabajos">
-    <div class="col-sm-3 mx-auto p-3">
-        <div class="card text-center bg-dark text-white m-10" style="width:80%;" >
-            <img class="card-img-top" src="{{trabajo.imgTra}}" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">{{trabajo.tituloTra}}</h5>
-              <p class="card-text" text-justify="center">. {{trabajo.fechaITra}} . {{trabajo.fechaFTra}} . <br><br> {{trabajo.descTra}} </p>
-              <a 
-                class="btn btn-dark tooltips"
-                data-placement="top"
-                data-toogle="tooltip"
-                data-original-title="Edit"
-                ><i class="fa-solid fa-pencil"></i></a>
-              <a 
-                class="btn btn-dark tooltips"
-                data-placement="top"
-                data-toogle="tooltip"
-                data-original-title="Delete"
-                ><i class="fa-solid fa-trash-can"></i></a>  
-            </div>
+<div id="trabajos">
+    <div class="row fw-bold" style="text-align:center">
+        <h1>‧̥̥͙⊹trabajos⊹‧̥̥͙</h1>
+        <div class="col" style="text-align:center">
+            <button type="button" class="btn btn-outline btn-sm" (click)="openFormModalNewT()" *ngIf="isLogged" style="margin-bottom:6vh">
+                AÑADIR
+            </button><br>
         </div>
     </div>
 
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 d-flex" *ngFor="let Trabajo of tra">
+                <div class="card text-center bg-dark text-white h-80" id="card">
+                    <div class="card-header">
+                        . {{Trabajo.fechaIT}} - {{Trabajo.fechaFT}} .
+                    </div>
+                    <img class="card-img-top img-fluid rounded float-center mx-auto" src="{{Trabajo.imgT}}"
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{Trabajo.nombreT}}</h5>
+                        <p class="card-text" text-justify="center"> {{Trabajo.descripcionT}} </p>
+                    </div>
+                    <div class="card-footer" *ngIf="isLogged">
+                        <button class="btn btn-dark tooltips" routerLink="/edittra/{{Trabajo.id}}">
+                            <i class="fa-solid fa-pencil"></i>
+                        </button>
+                        <button class="btn btn-dark tooltips" (click)="delete(Trabajo.id)">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+
+
+<!--form modal new-->
+<div class="modal fade" id="newModalT" tabindex="-1" aria-labelledby="newModalT" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="newModalT">AGREGAR PROYECTO</h5>
+                <button type="button" class="btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+                        <div class="form-group">
+                            <label for="nombreT">
+                                <h2>título</h2>
+                            </label>
+                            <input type="text" class="form-control" id="nombreE" name="nombreT" [(ngModel)]="nombreT"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="fechaIT">
+                                <h2>fecha inicio</h2>
+                            </label>
+                            <input type="number" class="form-control" id="fechaIT" name="fechaIT" [(ngModel)]="fechaIT">
+                        </div>
+                        <div class="form-group">
+                            <label for="fechaFT">
+                                <h2>fecha finalización</h2>
+                            </label>
+                            <input type="number" class="form-control" id="fechaFT" name="fechaFT" [(ngModel)]="fechaFT">
+                        </div>
+                        <div class="form-group">
+                            <label for="descripcionT">
+                                <h2>descripción</h2>
+                            </label>
+                            <input type="text" class="form-control" id="descripcionT" name="descripcionT"
+                                [(ngModel)]="descripcionT" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="imgT">
+                                <h2>URL imagen</h2>
+                            </label>
+                            <input type="text" class="form-control" id="imgT" name="imgT" [(ngModel)]="imgT">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline-info btn-sm" style="margin-top: 5vh;" (click)="onCreate()"
+                    (click)="reloadCurrentPage()">
+                    AGREGAR
+                </button>
+                <button type="button" class="btn btn-outline-info btn-sm" style="margin-top: 5vh;"
+                    data-bs-dismiss="modal">
+                    CERRAR
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -48,75 +119,30 @@
 
 
 <!--
+<div id="trabajos">
+    <div class="row fw-bold" style="text-align:center">
+        <h1>‧̥̥͙⊹trabajos⊹‧̥̥͙</h1>
+    </div>
 
-<div class="row" style="text-align: right;">
-    <h1>Trabajos realizados</h1>    
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-4 g-6">
+            <div class="card text-center bg-dark text-white display-flex p-2" *ngFor="let trabajo of trabajos"
+                id="card">
+                <div class="card-header">
+                    . {{trabajo.fechaITra}} - {{trabajo.fechaFTra}} .
+                </div>
+                <img class="card-img-top w-50 img-fluid rounded float-center mx-auto" src="{{trabajo.imgTra}}"
+                    alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{trabajo.tituloTra}}</h5>
+                    <p class="card-text" text-justify="center"> {{trabajo.descTra}} </p>
+                    <a class="btn btn-dark tooltips" data-placement="top" data-toogle="tooltip"
+                        data-original-title="Edit"><i class="fa-solid fa-pencil"></i></a>
+                    <a class="btn btn-dark tooltips" data-placement="top" data-toogle="tooltip"
+                        data-original-title="Delete"><i class="fa-solid fa-trash-can"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<div class="row" style="align-content: center;">
-    <div class="col-sm-3 mx-auto p-3" text-align="center">
-        <div class="card text-center bg-dark text-white m-10" style="width:80%;" >
-            <img class="card-img-top" src="../../../assets/imgXmple.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Nombre proyecto</h5>
-              <p class="card-text" text-justify="center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum ratione voluptatem recusandae sed ipsum aspernatur reiciendis sunt doloribus. Facilis esse illum doloremque debitis minima quae nostrum accusantium, doloribus nulla accusamus!</p>
-              <a href="#" class="btn btn-light">Video</a>
-            </div>
-        </div>
-    </div><div class="col-sm-3 mx-auto p-3" text-align="center">
-        <div class="card text-center bg-dark text-white m-10" style="width:80%;" >
-            <img class="card-img-top" src="../../../assets/imgXmple.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Nombre proyecto</h5>
-              <p class="card-text" text-justify="center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum ratione voluptatem recusandae sed ipsum aspernatur reiciendis sunt doloribus. Facilis esse illum doloremque debitis minima quae nostrum accusantium, doloribus nulla accusamus!</p>
-              <a href="#" class="btn btn-light">Video</a>
-            </div>
-        </div>
-    </div><div class="col-sm-3 mx-auto p-3" text-align="center">
-        <div class="card text-center bg-dark text-white m-10" style="width:80%;" >
-            <img class="card-img-top" src="../../../assets/imgXmple.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Nombre proyecto</h5>
-              <p class="card-text" text-justify="center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum ratione voluptatem recusandae sed ipsum aspernatur reiciendis sunt doloribus. Facilis esse illum doloremque debitis minima quae nostrum accusantium, doloribus nulla accusamus!</p>
-              <a href="#" class="btn btn-light">Video</a>
-            </div>
-        </div>
-    </div><div class="col-sm-3 mx-auto p-3" text-align="center">
-        <div class="card text-center bg-dark text-white m-10" style="width:80%;" >
-            <img class="card-img-top" src="../../../assets/imgXmple.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Nombre proyecto</h5>
-              <p class="card-text" text-justify="center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum ratione voluptatem recusandae sed ipsum aspernatur reiciendis sunt doloribus. Facilis esse illum doloremque debitis minima quae nostrum accusantium, doloribus nulla accusamus!</p>
-              <a href="#" class="btn btn-light">Video</a>
-            </div>
-        </div>
-    
-   
-</div> 
-
-
-    <div class="col3">
-        <img src="{{trabajo.imgTra}}" alt="" width="50">        
-    </div>
-    <div class="col text center">
-        <a 
-            class="btn btn-info tooltips"
-            data-placement="top"
-            data-toogle="tooltip"
-            data-original-title="Edit"
-        ><i class="fa-solid fa-pencil"></i></a>
-        <a 
-            class="btn btn-dark tooltips"
-            data-placement="top"
-            data-toogle="tooltip"
-            data-original-title="Delete"
-        ><i class="fa-solid fa-trash-can"></i></a>  
-    </div>
-    <div class="col6">
-        <h2>{{trabajo.tituloTra}}</h2>
-    </div>
-    <div class="col9">
-        <h4>{{trabajo.fechaITra}} - {{trabajo.fechaFTra}}</h4>
-    </div>
-    <div class="col12">
-        <p>{{trabajo.descTra}}</p>
-    </div>-->
+-->

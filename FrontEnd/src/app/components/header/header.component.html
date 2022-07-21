@@ -1,14 +1,52 @@
 <header class="header">
-    <nav class="navbar fixed-top navbar-dark bg-black">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-black">
         <div class="container">
-            <a class="navbar-brand">
-                <img src="../../../assets/LogoArgPro.png" width="170" height="100" alt="logoArgPro">
+
+            <a class="navbar-brand"
+                href="https://www.argentina.gob.ar/produccion/transformacion-digital-y-economia-del-conocimiento/argentina-programa">
+                <img src="../../../assets/LogoArgPro.png" width="140" height="50" alt="logoArgPro">
             </a>
-            <a class="navbar-brand" href="https://tatianacuoco.tumblr.com/"><img src="../../../assets/tumblr.png" width="130" height="130" alt="tumblr"></a>
-            <form class="form-inline">
-                <button class="btn btn-outline-light" (click)="goToPage('login')"> LOGIN </button>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">▒</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link scrollto" href="#trabajos">trabajos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link scrollto" href="#docencia">docencia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link scrollto" href="#proyectos">proyectos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link scrollto" href="#formacion">formación</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link scrollto" href="#habilidades">habilidades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link scrollto" href="#contacto">contacto</a>
+                    </li>
+                </ul>
+            </div>
+
+            <a class="navbar-brand" href="https://tatianacuoco.tumblr.com/">
+                <img src="../../../assets/tumblr.png" width="30" height="30" alt="tumblr">
+            </a>
+
+            <form class="form-inline p-2">
+                <button class="btn btn-outline-light" (click)="login()" *ngIf="!isLogged"> LOGIN </button>
+                <button class="btn btn-outline-light" (click)="onLogOut()" *ngIf="isLogged"> LOGOUT </button>
             </form>
         </div>
-    </nav>            
+    </nav>
 </header>
-

@@ -1,40 +1,68 @@
-   <!-- 
-       <div class="container">
-    <div id="fotoPerfil">
-        <img src="../../../assets/ttcc.jpg" 
-        class="img-fluid">
-    </div>
-    <div id="nombreTitulos">
-        <h2>. t t c c .</h2>
-        <p>Tatiana Cuoco</p>
-</div> -->
-
+<div class="container-flex" *ngFor="let Perfil of perfil">
 <div class="row" id="banner">
-    <img src={{perfil.banner}} class="img-fluid" 
-    alt="Responsive image" id="banner">
-</div> 
-<div class="row" id="perfil">
-    <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
-        <div class="container" style="text-align:center">
-            <div id="fotoPerfil">
-                <img src={{perfil.imgPerfil}} class="img-fluid rounded float-center"
-                alt="Responsive image" id="ttcc">
+    <img src={{Perfil.banner}} class="img-fluid" alt="Responsive image" id="banner">
+</div>
+
+<div class="bg perfil">
+    <div class="row">
+        <div class="col-xs-10 col-sm-5 col-md-5 col-lg-5">
+            <div class="container" id="perfil" style="text-align:center">
+                <div id="fotoPerfil">
+                    <img class="img-fluid rounded float-center mx-auto d-block" src={{Perfil.imgPerfil}}
+                        alt="Responsive image" id="ttcc">
+                </div>
+                <div id="nombreTitulos">
+                    <h2>{{Perfil.apodo}}</h2>
+                    <h5><br>-ˏ͛⑅ {{Perfil.nombre}} ⑅ˏ͛-</h5>
+                </div>
             </div>
-            <div id="nombreTitulos">
-                <h2>{{perfil.apodo}}</h2>
-                <p>{{perfil.nombre}}</p>
-            </div>        
         </div>
-    </div>
-    <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10">
-        <div id="descripcionPersonal">
-            <h4>{{perfil.titulo}}</h4>
-            <p>{{perfil.descripcion}}</p>
+        <div class="col-xs-10 col-sm-5 col-md-5 col-lg-5">
+            <div class="container" style="text-align:left" id="descripcionPersonal">
+                <div>
+                    <h3>{{Perfil.titulo}}</h3>
+                    <p>{{Perfil.descripcion}}</p>
+                </div>
+                <div *ngIf="isLogged">
+                    <button class="btn btn-dark tooltips" routerLink="/editperfil/{{Perfil.id}}">
+                        <i class="fa-solid fa-pencil"></i>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+</div>
 
 
+<!-- 
+       <div class="row" id="banner">
+    <img src={{perfil.banner}} class="img-fluid" alt="Responsive image" id="banner">
+</div>
 
-
-    
+<div class="container">
+    <div class="row" id="perfil">
+        <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
+            <div class="container" style="text-align:center">
+                <div id="fotoPerfil">
+                    <img class="img-fluid rounded float-center" src={{perfil.imgPerfil}} alt="Responsive image"
+                        id="ttcc">
+                </div>
+                <div id="nombreTitulos">
+                    <h2>{{perfil.apodo}}</h2>
+                    <p>{{perfil.nombre}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10">
+            <div id="descripcionPersonal">
+                <h4>{{perfil.titulo}}</h4>
+                <p>{{perfil.descripcion}}</p>
+            </div>
+            <a class="btn btn-dark tooltips" data-placement="top" data-toogle="tooltip" data-original-title="Edit"><i
+                    class="fa-solid fa-pencil"></i></a>
+            <a class="btn btn-dark tooltips" data-placement="top" data-toogle="tooltip" data-original-title="Delete"><i
+                    class="fa-solid fa-trash-can"></i></a>
+        </div>
+    </div>
+</div> -->

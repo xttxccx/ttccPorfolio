@@ -1,0 +1,39 @@
+<div class="row" style="text-align:center">
+    <h1>‧̥̥͙‧̥̥ ̥ ̮ ̥ ⊹experiencias⊹ ̥ ̮ ̥ ‧̥̥‧̥̥͙</h1>
+    <div class="col" style="text-align:center">
+        <button type="button" class="btn btn-outline-info btn-sm" routerLink="/nuevaexp" *ngIf="isLogged">
+            AÑADIR
+        </button>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row" *ngFor="let Experiencia of expe">
+        <div class="col-lg-3">
+            <img class="img-fluid rounded float-start mx-auto d-block" src="../../../assets/CamposTrilnick.png"
+                width="70">
+        </div>
+
+        <div class="col-lg-7">
+            <div class="col-6">
+                <h2>{{Experiencia.nombreE}}</h2>
+            </div>
+            <div class="col-9">
+                <h4>2002 - 2022</h4>
+            </div>
+            <div class="col-12">
+                <p>{{Experiencia.descripcionE}}</p>
+            </div>
+        </div>
+        
+        <div class="col text center" *ngIf="isLogged">
+            <button class="btn btn-outline-light tooltips" routerLink="/editexp/{{Experiencia.id}}">
+                <i class="fa-solid fa-pencil"></i>
+            </button>
+            <button class="btn btn-outline-light tooltips" (click)="delete(Experiencia.id)">
+                <i class="fa-solid fa-trash-can"></i>
+            </button>
+        </div>
+
+    </div>
+</div>

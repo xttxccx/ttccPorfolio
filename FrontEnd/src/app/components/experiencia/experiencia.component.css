@@ -1,0 +1,20 @@
+h2, h3, h4, p {display: inline-block;;color:  #f8f9fa;}
+
+.row {
+    background-color: black;
+}
+
+h1 { 
+    color: #7B6BA3;
+    margin-top:20vh;
+    margin-bottom:10vh;
+    font-weight: bold;
+}
+
+.btn {
+    margin: 20px;
+}
+
+.img-fluid {
+    margin:15px;
+}

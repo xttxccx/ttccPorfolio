@@ -1,188 +1,52 @@
 #banner {
-    display: flex;
-    max-height: 50vh;
-    margin-top: 5vh;
+  max-height: 50vh;
+  margin-top: 3vh;
+  background-size: cover;
+  box-sizing: content-box;
 }
 
-#perfil {
-    background-color: black;
-    padding: 5em;
-    display: flex;
-    align-items: center;
-}
-
-#fotoPerfil {
-    height: 15vh;
-}
-
-#ttcc{
-   
-    position: relative;
-    bottom: 10vh;
-    height: 34vh;
-    width:100%;
-}
-
-#nombreTitulos {
-    position: relative;
-
-
-} 
-
-h2 {
-    color: rgb(0, 174, 255);
-    font-weight: bold;
-}
-
-h4 { 
-    color: rgb(250, 0, 146);
-    }
-
-p {
-    color: white;
-    
-}
-
-
-
-
-/*.container {
-    display: block;
-    align-items: center;
-    width: 100%;
-}
-
-@media (max-width: 575px){
-    #fotoPerfil {
-    padding: 10px;
-    width: 50%;
-    margin: auto;
-    position: relative;
-    bottom: 125px;
-    }
-    #nombreTitulos {
-        text-align: center;
-        position: relative;
-        bottom: 175px;
-    }
-} 
-
-@media (min-width: 576px) and (max-width: 767px){
-    #fotoPerfil {
-        padding: 30px;
-        height: 40%;
-        position: relative;
-        bottom: 110px;
-        left: 30px;
-    }
-    #nombreTitulos {
-        text-align: center;
-        position: relative;
-        bottom: 185px;
-        left: 30px;
-    }
-
-}
-
-@media (min-width: 768px) /*and (max-width:1200px) {
-    #fotoPerfil {
-        padding: 30px;
-        width: 100%;
-        position: relative;
-        bottom: 110px;
-        left: 30px;
-    }
-    #nombreTitulos {
-        text-align: center;
-        position: relative;
-        bottom: 185px;
-        left: 30px;
-    }
-
+.bg {
+  background-color: black;
+  background-size: cover;
+  box-sizing: content-box;
 }
 
 @media (min-width: 1200px) {
-    #fotoPerfil {
-        padding: 30px;
-        width: 100%;
-        position: relative;
-        bottom: 110px;
-        left: 30px;
-    }
-    #nombreTitulos {
-        text-align: center;
-        position: relative;
-        bottom: 185px;
-        left: 30px;
-    }
+  #perfil {
+    position: relative;
+    padding-left: 15vw;
+  }
+}
 
-}*/
+#ttcc {
+  position: relative;
+  bottom: 5vh;
+}
 
-/*
+#nombreTitulos {
+  position: relative;
+  bottom: 10vh;
+}
+
+#descripcionPersonal {
+    position: relative;
+    top: 5vh;
+}
+
 h2 {
-    color: rgb(0, 174, 255);
-    font-weight: bold;
+  color: rgb(130, 186, 194);
+  font-weight: bold;
+}
+
+h3 {
+  color: rgb(123, 107, 163);
+  font-weight: bold;
+}
+
+h5 { 
+    color: #f8f9fa;
 }
 
 p {
-    color: white;
-    padding: 5px;
-}*/
-
-/*banner> 
-
-img{
-    width: 100%;
-    height: 300px;
-}*/
-
-/*acercade>
-.row {
-    background-color: black;
-    display: flex;
-
+  color: #f8f9fa;
 }
-*/
-
-/* descripcion>
-@media (max-width: 575px){
-    #descripcionPersonal {
-        padding: 5%;
-        position: relative;
-        bottom: 180px;
-
-    }
-} 
-
-@media (min-width: 576px){
-    #descripcionPersonal {
-        padding: 5%;
-    }
-
-}
-
-h4 { 
-    color: rgb(250, 0, 146);
-}
-
-p {
-    color: white;
-}*/
-
-
-/*.gradient {
-    color: inherit;
-    background-image: linear-gradient(
-        347deg,
-        #671da7 24%,
-        rgba(255, 255, 255, 0) 64%
-      ),
-      linear-gradient(216deg, #402582 5%, rgba(255, 255, 255, 0) 100%),
-      radial-gradient(
-        circle at -171% 174%,
-        #3be746 55%,
-        rgba(255, 255, 255, 0) 81%
-      ),
-      linear-gradient(304deg, #30f4f4 15%, rgba(255, 255, 255, 0) 100%),
-      linear-gradient(238deg, rgba(255, 255, 255, 0) 18%, #c9159f 26%);
-  }*/

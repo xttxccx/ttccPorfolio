@@ -1,0 +1,97 @@
+.row {
+    background-color: rgb(0, 0, 0);
+   }
+   
+h1 { 
+    color:  #735e7a;
+    margin-top:20vh;
+    margin-bottom:4vh;
+    font-weight: bold;
+}
+
+h2 {
+    color: #7B6BA3;
+}
+
+h5 { 
+    color: rgb(130, 186, 194);
+}
+
+.btn {
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+.btn-outline {
+    color: rgb(130, 186, 194);
+    border-color: rgb(130, 186, 194);
+}
+
+.container {
+    position: relative;
+    width: 70%;
+    margin-left: 15.5%;
+}
+
+.progress-title{
+    font-size: 20px;
+    font-weight: 700;
+    color: #b6b6b6e5;
+    margin: 0 0 20px;
+}
+.progress{
+    height: 15px;
+    background:  #b6b6b6e5;
+    border-radius: 8px;
+    box-shadow: none;
+    margin-bottom: 30px;
+    overflow: visible;
+}
+.progress .progress-bar{
+    border-radius: 8px;
+    box-shadow: none;
+    position: relative;
+    animation: animate-positive 5s;
+}
+.progress .progress-bar:before{
+    content: "";
+    width: 100%;
+    height: 50%;
+    background: rgba(0,0,0,0.3);
+    border-radius: 0 0 10px 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+}
+.progress .progress-bar:after{
+    content: "";
+    width: 15px;
+    height: 15px;
+    border-radius: 20%;
+    background:rgb(112, 173, 142);
+    border: 3px solid #3f3f3fe5;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+}
+@keyframes animate-positive{
+    0%{ width: 0; }
+}
+
+.modal-content {
+	background-color: #000000;
+    border-color: #424242;
+}
+
+.modal-content .modal-header,
+.modal-content .modal-footer {
+	border-color: #424242;
+}
+
+.form-control {
+	background-color: #ffffff;
+	border-color: #282d36;
+}
+

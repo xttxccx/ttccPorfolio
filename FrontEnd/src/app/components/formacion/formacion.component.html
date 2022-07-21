@@ -1,35 +1,97 @@
-<div class="row"> 
-    <h1>Formación / Investigación / Residencias</h1>
+<div id="formacion">
+  <div class="row" style="text-align:center">
+    <h1>‧̥̥͙‧̥̥ ̥ ̮ ̥ ⊹formación⊹ ̥ ̮ ̥ ‧̥̥‧̥̥͙</h1>
+    <div class="col" style="text-align:center">
+      <button type="button" class="btn btn-outline btn-sm" (click)="openFormModalNewF()" *ngIf="isLogged" style="margin-bottom:6vh">
+        AÑADIR
+      </button><br><br>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row" *ngFor="let Formacion of forma">
+      <div class="col-lg-2">
+        <img class="img-fluid rounded float-end mx-auto d-block" src="{{Formacion.imgF}}" width="70">
+      </div>
+
+      <div class="col-lg-8">
+        <div class="col-12">
+          <h3>{{Formacion.nombreF}}</h3>
+        </div>
+        <div class="col-8">
+          <h4>{{Formacion.fechaIF}} - {{Formacion.fechaFF}}</h4>
+        </div>
+        <div class="col-12">
+          <p>{{Formacion.descripcionF}}</p>
+        </div>
+      </div>
+
+      <div class="col-lg-2 text center" *ngIf="isLogged">
+        <button class="btn btn-outline tooltips" routerLink="/editforma/{{Formacion.id}}">
+          <i class="fa-solid fa-pencil"></i>
+        </button>
+        <button class="btn btn-outline tooltips" (click)="delete(Formacion.id)">
+          <i class="fa-solid fa-trash-can"></i>
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div class="row" *ngFor="let formacion of formaciones">
-    <div class="col-lg-1">
-        <img src="{{formacion.imgForm}}" alt="" width="50">
-    </div>
-    <div class="col text center">
-        <a 
-            class="btn btn-info tooltips"
-            data-placement="top"
-            data-toogle="tooltip"
-            data-original-title="Edit"
-        ><i class="fa-solid fa-pencil"></i></a>
-        <a 
-            class="btn btn-info tooltips"
-            data-placement="top"
-            data-toogle="tooltip"
-            data-original-title="Delete"
-        ><i class="fa-solid fa-trash-can"></i></a>  
-    </div>
-    <div class="col-lg-11">
-        <div class="col6">
-            <h2>{{formacion.tituloForm}}</h2>
-        </div>
-        <div class="col9">
-            <h4>{{formacion.fechaIForm}} - {{formacion.fechaFForm}}</h4>
-        </div>
-        <div class="col12">
-            <p>{{formacion.descForm}}</p>
-        </div>
-    </div>
+
+
+<!--form modal new-->
+<div class="modal fade" id="newModalF" tabindex="-1" aria-labelledby="newModalF" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="newModalF">AGREGAR TRABAJO DOCENTE</h5>
+              <button type="button" class="btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div>
+                  <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+                      <div class="form-group">
+                          <label for="nombreF"><h2>título</h2></label>
+                          <input type="text" class="form-control" id="nombreF" name="nombreF" [(ngModel)]="nombreF" required>
+                      </div>
+                      <div class="form-group">
+                          <label for="fechaIF"><h2>fecha inicio</h2></label>
+                          <input type="number" class="form-control" id="fechaIF" name="fechaIF" [(ngModel)]="fechaIF">
+                      </div>
+                      <div class="form-group">
+                          <label for="fechaFF"><h2>fecha finalización</h2></label>
+                          <input type="number" class="form-control" id="fechaFF" name="fechaFF" [(ngModel)]="fechaFF">
+                      </div>
+                      <div class="form-group">
+                          <label for="descripcionF"><h2>descripción</h2></label>
+                          <input type="text" class="form-control" id="descripcionF" name="descripcionF" [(ngModel)]="descripcionF" required>
+                      </div>
+                      <div class="form-group">
+                          <label for="imgF"><h2>URL imagen</h2></label>
+                          <input type="text" class="form-control" id="imgF" name="imgF" [(ngModel)]="imgF">
+                      </div>    
+                  </form>
+              </div>
+          </div>
+          </div>
+          <div class="modal-footer">
+              <button class="btn btn-outline btn-sm" style="margin-top: 5vh;" 
+                  (click)="onCreate()"
+                  (click)="reloadCurrentPage()">
+                  AGREGAR
+              </button>
+              <button type="button" class="btn btn-outline btn-sm" style="margin-top: 5vh;"
+                  data-bs-dismiss="modal">
+                  CERRAR
+              </button>
+          </div>
+      </div>
+  </div>
 </div>
+
+
+
+
 

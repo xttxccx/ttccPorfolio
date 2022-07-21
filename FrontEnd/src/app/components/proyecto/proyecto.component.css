@@ -1,0 +1,52 @@
+h1 { 
+    color: #735e7a;
+    margin-top:20vh;
+    margin-bottom:4vh;
+    font-weight: bold;
+}
+
+h2 {
+    color: #7B6BA3;
+}
+
+h5 { 
+    color: rgb(130, 186, 194);
+}
+
+.btn-outline {
+    color: rgb(130, 186, 194);
+    border-color: rgb(130, 186, 194);
+}
+
+.btn-dark {
+    color: rgb(130, 186, 194);
+}
+
+.container {
+    margin-top: 2vw;
+}
+
+#card {
+    margin-bottom: 8%; 
+}
+
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+
+.modal-content {
+	background-color: #000000;
+    border-color: #424242;
+}
+
+.modal-content .modal-header,
+.modal-content .modal-footer {
+	border-color: #424242;
+}
+
+.form-control {
+	background-color: #ffffff;
+	border-color: #282d36;
+}

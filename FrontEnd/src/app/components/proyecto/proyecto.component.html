@@ -1,0 +1,94 @@
+<div id="proyectos">
+    <div class="row fw-bold" style="text-align:center">
+        <h1>‧̥̥͙⊹proyectos⊹‧̥̥͙</h1>
+        <div class="col" style="text-align:center">
+            <button type="button" class="btn btn-outline btn-sm" (click)="openFormModalNewP()" *ngIf="isLogged" style="margin-bottom:6vh">
+                AÑADIR
+            </button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 d-flex" *ngFor="let Proyecto of proy">
+            <div class="card text-center bg-dark text-white h-80" id="card">
+                <div class="card-header">
+                    . {{Proyecto.anioP}} .
+                </div>
+                <img class="card-img-top img-fluid rounded float-center mx-auto" src="{{Proyecto.imgP}}"
+                    alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{Proyecto.nombreP}}</h5>
+                    <p class="card-text" text-justify="center"> {{Proyecto.descripcionP}} </p>
+                    <a href="{{Proyecto.linkP}}" class="btn btn-dark"><i class="fa-solid fa-link"></i></a>
+                </div>
+                <div class="card-footer" *ngIf="isLogged">
+                    <button class="btn btn-dark tooltips" routerLink="/editproy/{{Proyecto.id}}">
+                        <i class="fa-solid fa-pencil"></i>
+                    </button>
+                    <button class="btn btn-dark tooltips" (click)="delete(Proyecto.id)">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!--form modal new-->
+<div class="modal fade" id="newModalP" tabindex="-1" aria-labelledby="newModalP" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="newModalP">AGREGAR PROYECTO</h5>
+                <button type="button" class="btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                    <div class="row">
+                        <div>
+                            <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+                                <div class="form-group">
+                                    <label for="nombreP"><h2>título</h2></label>
+                                    <input type="text" class="form-control" id="nombreP" name="nombreP" [(ngModel)]="nombreP" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="anioP"><h2>año de realización</h2></label>
+                                    <input type="number" class="form-control" id="anioP" name="anioP" [(ngModel)]="anioP">
+                                </div>
+                                <div class="form-group">
+                                    <label for="descripcionP"><h2>descripción</h2></label>
+                                    <input type="text" class="form-control" id="descripcionP" name="descripcionP" [(ngModel)]="descripcionP" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="imgP"><h2>URL imagen</h2></label>
+                                    <input type="text" class="form-control" id="imgP" name="imgP" [(ngModel)]="imgP">
+                                </div>
+                                <div class="form-group">
+                                    <label for="linkP"><h2>link</h2></label>
+                                    <input type="text" class="form-control" id="linkP" name="linkP" [(ngModel)]="linkP">
+                                </div>  
+                            </form>
+                        </div>
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline-info btn-sm" style="margin-top: 5vh;" 
+                    (click)="onCreate()"
+                    (click)="reloadCurrentPage()">
+                    AGREGAR
+                </button>
+                <button type="button" class="btn btn-outline-info btn-sm" style="margin-top: 5vh;"
+                    data-bs-dismiss="modal">
+                    CERRAR
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

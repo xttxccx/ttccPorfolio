@@ -1,0 +1,77 @@
+<div id="habilidades">
+    <div class="row fw-bold" style="text-align:center">
+        <h1>‧̥̥͙⊹habilidades⊹‧̥̥͙</h1>
+        <div class="col" style="text-align:center">
+            <button type="button" class="btn btn-outline btn-sm" (click)="openFormModalNewS()" *ngIf="isLogged" style="margin-bottom:6vh">
+                AÑADIR
+            </button><br><br>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-4" *ngFor="let Skill of skills">
+                <h3 class="progress-title text-center color-white">{{Skill.nombreS}}
+                    {{Skill.porcentajeS}}%
+                </h3>
+                <div class="progress">
+                    <div class="progress-bar" [ngStyle]="{'width.%':Skill.porcentajeS}"
+                        style="background:rgb(112, 173, 142);">
+                    </div>
+                </div>
+                <div class="col" *ngIf="isLogged">
+                    <button class="btn btn-outline tooltips" routerLink="/editskill/{{Skill.id}}">
+                        <i class="fa-solid fa-pencil"></i>
+                    </button>
+                    <button class="btn btn-outline tooltips" (click)="delete(Skill.id)">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                    <br><br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!--form modal new-->
+<div class="modal fade" id="newModalS" tabindex="-1" aria-labelledby="newModalS" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="newModalS">AGREGAR HABILIDAD</h5>
+                <button type="button" class="btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <form>
+                    <div class="form-group">
+                        <label for="nombreS">
+                            <h2>habilidad</h2>
+                        </label>
+                        <input type="text" class="form-control" id="nombreS" name="nombreS" [(ngModel)]="nombreS"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="porcentajeS">
+                            <h2>porcentaje</h2>
+                        </label>
+                        <input type="text" class="form-control" id="porcentajeS" name="porcentajeS"
+                            [(ngModel)]="porcentajeS" required>
+                    </div>
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline-info btn-sm" (click)="onCreate()" (click)="reloadCurrentPage()">
+                    AGREGAR
+                </button>
+                <button type="button" class="btn btn-outline-info btn-sm" data-bs-dismiss="modal">
+                    CERRAR
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

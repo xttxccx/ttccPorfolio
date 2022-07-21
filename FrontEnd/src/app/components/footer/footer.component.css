@@ -3,11 +3,13 @@
 }
 
 footer{
-    padding-right: 5%;
-    color:rgb(11, 230, 102);
+    
+    color:rgb(130, 186, 194);
     font-size: 22px;
     display: flex;
     flex-direction: column;
     text-align: right;
+    margin-top: 7%;
+    padding-right: 5%;
 
 }

@@ -1,53 +1,93 @@
-
-<div class="row">
-    <h1>Docencia / Talleres / Conferencias</h1>
-</div>
-
-<div class="row" *ngFor="let docencia of docencias">
-    <div class="col-lg-1">
-        <img src="{{docencia.imgDoc}}" alt="" width="50">
-    </div>
-    <div class="col text center">
-        <a 
-            class="btn btn-info tooltips"
-            data-placement="top"
-            data-toogle="tooltip"
-            data-original-title="Edit"
-        ><i class="fa-solid fa-pencil"></i></a>
-        <a 
-            class="btn btn-info tooltips"
-            data-placement="top"
-            data-toogle="tooltip"
-            data-original-title="Delete"
-        ><i class="fa-solid fa-trash-can"></i></a>  
-    </div>
-    <div class="col-lg-11">
-        <div class="col6">
-            <h2>{{docencia.tituloDoc}}</h2>
-        </div>
-        <div class="col9">
-            <h4>{{docencia.fechaIDoc}} - {{docencia.fechaFDoc}}</h4>
-        </div>
-        <div class="col12">
-            <p>{{docencia.descDoc}}</p>
-        </div>
+<div id="docencia">
+  <div class="row fw-bold" style="text-align:center">
+    <h1>‧̥̥͙⊹docencia⊹‧̥̥͙</h1>
+    <div class="col" style="text-align:center">
+        <button type="button" class="btn btn-outline btn-sm" (click)="openFormModalNewD()" *ngIf="isLogged" style="margin-bottom:6vh">
+            AÑADIR
+        </button><br><br>
     </div>
 </div>
 
+  <div class="container">
+    <div class="row" *ngFor="let Docencia of doc">
+      <div class="col-lg-2">
+        <img class="img-fluid rounded float-end mx-auto d-block" src="{{Docencia.imgD}}" width="70">
+      </div>
 
-<!--
-    <ul>
-            <li>
-                <h3>{{docencia.fechaIDoc}} - {{docencia.fechaFDoc}}</h3> <h2>{{docencia.tituloDoc}}</h2> 
-                <p>{{docencia.descDoc}}</p>
-            </li>
-            <li>
-                <h3>(years)</h3> <h2>X 2</h2> 
-                <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam culpa aliquid eaque quae. Minima corporis reiciendis velit laborum. Dolore laudantium iste nihil magni itaque nesciunt iure laborum saepe porro id?</p>
-            </li>
-            <li>
-                <h3>(years)</h3> <h2>X 3</h2> 
-                <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam culpa aliquid eaque quae. Minima corporis reiciendis velit laborum. Dolore laudantium iste nihil magni itaque nesciunt iure laborum saepe porro id?</p>
-            </li>
-        </ul>S
--->
+      <div class="col-lg-8">
+        <div class="col-12">
+          <h3>{{Docencia.nombreD}}</h3>
+        </div>
+        <div class="col-8">
+          <h4>{{Docencia.fechaID}} - {{Docencia.fechaFD}}</h4>
+        </div>
+        <div class="col-12">
+          <p>{{Docencia.descripcionD}}</p>
+        </div>
+      </div>
+
+      <div class="col-lg-2 text-center" *ngIf="isLogged">
+        <button class="d-inline btn btn-outline tooltips" routerLink="/editdoc/{{Docencia.id}}">
+          <i class="fa-solid fa-pencil"></i>
+        </button>
+        <button class="d-inline btn btn-outline tooltips" (click)="delete(Docencia.id)">
+          <i class="fa-solid fa-trash-can"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--form modal new-->
+<div class="modal fade" id="newModalD" tabindex="-1" aria-labelledby="newModalD" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="newModalD">AGREGAR TRABAJO DOCENTE</h5>
+              <button type="button" class="btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div>
+                  <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+                      <div class="form-group">
+                          <label for="nombreD"><h2>título</h2></label>
+                          <input type="text" class="form-control" id="nombreD" name="nombreD" [(ngModel)]="nombreD" required>
+                      </div>
+                      <div class="form-group">
+                          <label for="fechaID"><h2>fecha inicio</h2></label>
+                          <input type="number" class="form-control" id="fechaID" name="fechaID" [(ngModel)]="fechaID">
+                      </div>
+                      <div class="form-group">
+                          <label for="fechaFD"><h2>fecha finalización</h2></label>
+                          <input type="number" class="form-control" id="fechaFD" name="fechaFD" [(ngModel)]="fechaFD">
+                      </div>
+                      <div class="form-group">
+                          <label for="descripcionD"><h2>descripción</h2></label>
+                          <input type="text" class="form-control" id="descripcionD" name="descripcionD" [(ngModel)]="descripcionD" required>
+                      </div>
+                      <div class="form-group">
+                          <label for="imgD"><h2>URL imagen</h2></label>
+                          <input type="text" class="form-control" id="imgD" name="imgD" [(ngModel)]="imgD">
+                      </div>   
+                  </form>
+              </div>
+          </div>
+          </div>
+          <div class="modal-footer">
+              <button class="btn btn-outline btn-sm" style="margin-top: 5vh;" 
+                  (click)="onCreate()"
+                  (click)="reloadCurrentPage()">
+                  AGREGAR
+              </button>
+              <button type="button" class="btn btn-outline btn-sm" style="margin-top: 5vh;"
+                  data-bs-dismiss="modal">
+                  CERRAR
+              </button>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+

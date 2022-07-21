@@ -4,8 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,36 +12,23 @@ import lombok.Setter;
 public class Trabajo {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long idTra;
-    
-    @NotNull @Size(min=1, max=225, message="error de longitud")
-    private String tituloTra;
-    
-    @NotNull 
-    private int fechaITra;
-    
-    private int fechaFTra;
-   
-    @NotNull @Size(min=1, max=500, message="error de longitud")
-    private String descTra;
-   
-    @Size(min=1, max=300, message="error de longitud")
-    private String imgTra;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    private String nombreT;
+    private int fechaIT;
+    private int fechaFT;
+    private String descripcionT;
+    private String imgT;
 
     public Trabajo() {
     }
 
-    public Trabajo(Long idTra, String tituloTra, int fechaITra, int fechaFTra, String descTra, String imgTra) {
-        this.idTra = idTra;
-        this.tituloTra = tituloTra;
-        this.fechaITra = fechaITra;
-        this.fechaFTra = fechaFTra;
-        this.descTra = descTra;
-        this.imgTra = imgTra;
-    }
-
-  
-    
-    
+    public Trabajo(String nombreT, int fechaIT, int fechaFT, String descripcionT, String imgT) {
+        this.nombreT = nombreT;
+        this.fechaIT = fechaIT;
+        this.fechaFT = fechaFT;
+        this.descripcionT = descripcionT;
+        this.imgT = imgT;
+    }       
 }
+

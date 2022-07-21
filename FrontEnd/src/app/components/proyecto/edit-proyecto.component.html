@@ -1,0 +1,31 @@
+<div class="container" style="margin-top: 10vh;">
+    <div class="row" *ngIf="proy">
+        <div>
+            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="nombreP"><h2>título</h2></label>
+                    <input type="text" class="form-control" id="nombreP" name="nombreP" [(ngModel)]="proy.nombreP" required>
+                </div>
+                <div class="form-group">
+                    <label for="anioP"><h2>año de realización</h2></label>
+                    <input type="number" class="form-control" id="anioP" name="anioP" [(ngModel)]="proy.anioP">
+                </div>
+                <div class="form-group">
+                    <label for="descripcionP"><h2>descripción</h2></label>
+                    <input type="text" class="form-control" id="descripcionP" name="descripcionP" [(ngModel)]="proy.descripcionP" required>
+                </div>
+                <div class="form-group">
+                    <label for="imgP"><h2>URL imagen</h2></label>
+                    <input type="text" class="form-control" id="imgP" name="imgP" [(ngModel)]="proy.imgP">
+                </div>
+                <div class="form-group">
+                    <label for="linkP"><h2>link</h2></label>
+                    <input type="text" class="form-control" id="linkP" name="linkP" [(ngModel)]="proy.linkP">
+                </div>
+                <button class="btn btn-outline-info btn-sm" style="margin-top: 5vh;">
+                    ACTUALIZAR
+                </button>      
+            </form>
+        </div>
+    </div>
+</div>

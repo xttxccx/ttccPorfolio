@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Perfil } from 'src/app/model/perfil';
 import { perfil } from 'src/app/model/perfil.model';
-import { PerfilService } from 'src/app/service/perfil.service';
+import { SPerfilService } from 'src/app/service/s-perfil.service';
+import { TokenService } from 'src/app/service/token.service';
 
 @Component({
   selector: 'app-perfil',
@@ -10,12 +12,25 @@ import { PerfilService } from 'src/app/service/perfil.service';
 
 export class PerfilComponent implements OnInit {
   
-  perfil: perfil = new perfil("","","","","","");
+  perfil: Perfil[] = [];
 
-  constructor(public perfilService: PerfilService) { }
+  constructor(private sPerfil: SPerfilService, private tokenService: TokenService) { }
+
+  isLogged = false;
 
   ngOnInit(): void {
-    this.perfilService.getPerfil().subscribe(data => {this.perfil = data});
+    
+    this.cargarPerfil();
+
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }
+  }
+
+  cargarPerfil(): void {
+    this.sPerfil.lista().subscribe(data => {this.perfil = data;})    
   }
 
 }
