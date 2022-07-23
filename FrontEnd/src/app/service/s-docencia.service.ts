@@ -8,7 +8,7 @@ import { Docencia } from '../model/docencia';
 })
 export class SDocenciaService {
 
-  docURL = 'http://localhost:8080/docencia/'
+  docURL = 'https://ttcc-portfolio-back.herokuapp.com/docencia/'
 
   constructor(private httpClient: HttpClient) { }
 

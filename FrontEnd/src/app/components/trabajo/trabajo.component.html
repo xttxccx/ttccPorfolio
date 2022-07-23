@@ -42,7 +42,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="newModalT">AGREGAR PROYECTO</h5>
+                <h5 class="modal-title" id="newModalT">AGREGAR TRABAJO</h5>
                 <button type="button" class="btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -57,13 +57,13 @@
                         </div>
                         <div class="form-group">
                             <label for="fechaIT">
-                                <h2>fecha inicio</h2>
+                                <h2>año inicio</h2>
                             </label>
                             <input type="number" class="form-control" id="fechaIT" name="fechaIT" [(ngModel)]="fechaIT">
                         </div>
                         <div class="form-group">
                             <label for="fechaFT">
-                                <h2>fecha finalización</h2>
+                                <h2>año finalización</h2>
                             </label>
                             <input type="number" class="form-control" id="fechaFT" name="fechaFT" [(ngModel)]="fechaFT">
                         </div>
@@ -84,11 +84,11 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-outline-info btn-sm" style="margin-top: 5vh;" (click)="onCreate()"
+                <button class="btn btn-outline btn-sm" style="margin-top: 5vh;" (click)="onCreate()"
                     (click)="reloadCurrentPage()">
                     AGREGAR
                 </button>
-                <button type="button" class="btn btn-outline-info btn-sm" style="margin-top: 5vh;"
+                <button type="button" class="btn btn-outline btn-sm" style="margin-top: 5vh;"
                     data-bs-dismiss="modal">
                     CERRAR
                 </button>

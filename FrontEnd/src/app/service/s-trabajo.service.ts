@@ -8,7 +8,7 @@ import { Trabajo } from '../model/trabajo';
 })
 export class STrabajoService {
 
-  traURL = 'http://localhost:8080/trabajo/'
+  traURL = 'https://ttcc-portfolio-back.herokuapp.com/trabajo/'
 
   constructor(private httpClient: HttpClient) { }
 

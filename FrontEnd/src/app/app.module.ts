@@ -14,9 +14,6 @@ import { LoginComponent } from './components/login/login.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { interceptorProvider } from './service/interceptor-service';
-import { ExperienciaComponent } from './components/experiencia/experiencia.component';
-import { NewExperienciaComponent } from './components/experiencia/new-experiencia.component';
-import { EditExperienciaComponent } from './components/experiencia/edit-experiencia.component';
 import { EditTrabajoComponent } from './components/trabajo/edit-trabajo.component';
 import { EditDocenciaComponent } from './components/docencia/edit-docencia.component';
 import { ProyectoComponent } from './components/proyecto/proyecto.component';
@@ -39,9 +36,6 @@ import { EditSkillComponent } from './components/skill/edit-skill.component';
     FooterComponent,
     PortfolioComponent,
     LoginComponent,
-    ExperienciaComponent,
-    NewExperienciaComponent,
-    EditExperienciaComponent,
     EditTrabajoComponent,
     EditDocenciaComponent,
     ProyectoComponent,

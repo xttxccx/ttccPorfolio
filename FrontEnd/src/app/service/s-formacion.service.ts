@@ -9,7 +9,7 @@ import { Formacion } from '../model/formacion';
 })
 export class SFormacionService {
 
-  formaURL = 'http://localhost:8080/formacion/'
+  formaURL = 'https://ttcc-portfolio-back.herokuapp.com/formacion/'
 
   constructor(private httpClient: HttpClient) { }
 

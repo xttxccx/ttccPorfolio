@@ -8,7 +8,7 @@ import { Perfil } from '../model/perfil';
 })
 export class SPerfilService {
 
-  perfilURL = 'http://localhost:8080/perfil/'
+  perfilURL = 'https://ttcc-portfolio-back.herokuapp.com/perfil/'
 
   constructor(private httpClient: HttpClient) { }
 

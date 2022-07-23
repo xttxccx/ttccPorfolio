@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { EditDocenciaComponent } from './components/docencia/edit-docencia.component';
-import { EditExperienciaComponent } from './components/experiencia/edit-experiencia.component';
-import { NewExperienciaComponent } from './components/experiencia/new-experiencia.component';
 import { EditFormacionComponent } from './components/formacion/edit-formacion.component';
 import { LoginComponent } from './components/login/login.component';
 import { EditPerfilComponent } from './components/perfil/edit-perfil.component';
@@ -16,8 +14,6 @@ const routes: Routes = [
   {path:'login', component:LoginComponent},
   {path:'', redirectTo: 'portfolio', pathMatch:'full'},
   {path:'editperfil/:id', component:EditPerfilComponent},
-  {path:'nuevaexp', component:NewExperienciaComponent},
-  {path:'editexp/:id', component:EditExperienciaComponent},
   {path:'edittra/:id', component:EditTrabajoComponent},
   {path:'editdoc/:id', component:EditDocenciaComponent},
   {path:'editproy/:id', component:EditProyectoComponent},

@@ -46,7 +46,7 @@
             </div>
             <div class="modal-body">
 
-                <form>
+                <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
                     <div class="form-group">
                         <label for="nombreS">
                             <h2>habilidad</h2>
